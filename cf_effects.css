@@ -38,9 +38,80 @@ body header {
 }
 
 /* Aside Styles */
+/* 
+The syntax for the border element is size(10px), type or style(double), and color of the border(a dark gray sort of color.)
+*/
 section aside {
     border: 10px double rgba(92, 42, 8, 0.3);
     border-radius: 30px;
 }
 
+/* 
+This rounds off both of the radii of the top of borders.
+*/
+section aside h1 {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+section#left {
+    perspective: 450px;
+}
+
+section#right {
+    perspective: 450px;
+}
+
+/* 
+This rotates the left section to face towards the reader and get smaller as it gets to the center of the page. The style directly after does the same thing, but with the left part(inward) facing towards the center instead of the reader.
+*/
+section#left aside {
+    transform: rotateY(25deg);
+}
+
+section#right aside {
+    transform: rotateY(-25deg);
+}
+
 /* Cube Styles */
+div#cube {
+    position: relative;
+    margin: 180px auto 150px auto;
+    width: 400px;
+    height: 400px;
+    perspective: 450px;
+}
+
+div.cube_face {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+}
+
+/* a */
+div#cube_front {
+    transform: translateZ(-50px);
+}
+
+/* 
+In the section under here, I had trouble with the transform because I was separating my text with commas. These commas caused the browser to read one transformation or another, but not both. Removing the commas allowed the images to be displayed as the cube space desired.
+*/
+/* b */
+div#cube_left {
+    transform: translateX(-200px) rotateY(90deg);
+}
+
+/* c */
+div#cube_right {
+    transform: translateX(200px) rotateY(-90deg);
+}
+
+/* d */
+div#cube_top {
+    transform: translateY(-200px) rotateX(-90deg);
+}
+
+/* e */
+div#cube_bottom {
+    transform: translateY(200px) rotateX(90deg);
+}
